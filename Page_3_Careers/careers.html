@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice Junction — Careers</title>
+  <link rel="stylesheet" href="careers.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-logo">🍛 Spice Junction</div>
+      <div class="nav-links">
+        <a href="../Page_1_Menu/index.html">Menu</a>
+        <a href="../Page_2_About/index.html">About</a>
+        <a href="careers.html" class="active">Careers</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="careers-hero">
+    <h1>Join Our Team at Spice Junction</h1>
+    <p>We are always on the lookout for passionate, hardworking individuals who love food and people. Fill in your details below and we'll be in touch!</p>
+  </section>
+
+  <!-- ===== APPLICATION FORM ===== -->
+  <main class="form-section">
+    <div class="form-container">
+      <h2>Job Application Form</h2>
+
+      <!-- Success message (hidden by default, shown after submit) -->
+      <div class="success-banner" id="successBanner" style="display:none;">
+        ✅ Application submitted successfully! We will reach out to you soon.
+      </div>
+
+      <!-- Error message for Firebase failures (hidden by default) -->
+      <div class="error-banner" id="errorBanner" style="display:none;"></div>
+
+      <!-- THE FORM -->
+      <form id="applicationForm" novalidate>
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" placeholder="e.g. Rajan Pillai" />
+          <span class="field-error" id="fullNameError"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" placeholder="e.g. rajan@email.com" />
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" placeholder="e.g. 9840012345" />
+          <span class="field-error" id="phoneError"></span>
+        </div>
+
+        <!-- Position -->
+        <div class="form-group">
+          <label for="position">Position Applied For <span class="required">*</span></label>
+          <select id="position">
+            <option value="">-- Select a position --</option>
+            <option value="Chef">Chef</option>
+            <option value="Waiter">Waiter</option>
+            <option value="Manager">Manager</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Cashier">Cashier</option>
+          </select>
+          <span class="field-error" id="positionError"></span>
+        </div>
+
+        <!-- Experience -->
+        <div class="form-group">
+          <label for="experience">Years of Experience</label>
+          <input type="number" id="experience" min="0" placeholder="e.g. 3" value="0" />
+          <span class="field-error" id="experienceError"></span>
+        </div>
+
+        <!-- Why should we hire you -->
+        <div class="form-group">
+          <label for="reason">Why Should We Hire You? <span class="required">*</span></label>
+          <textarea id="reason" rows="5" placeholder="Tell us about yourself (minimum 20 characters)..."></textarea>
+          <span class="field-error" id="reasonError"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn" class="submit-btn">Submit Application</button>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>🍛 Spice Junction &nbsp;|&nbsp; © 2025 All Rights Reserved</p>
+  </footer>
+
+  <!-- Firebase SDK (v9 compat mode — works with normal script tags) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Our careers JS -->
+  <script src="careers.js"></script>
+</body>
+</html>

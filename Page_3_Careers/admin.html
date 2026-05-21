@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice Junction — Admin Panel</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ===== ADMIN HEADER ===== -->
+  <header class="admin-header">
+    <div class="header-inner">
+      <div class="logo">🍛 Spice Junction</div>
+      <span class="admin-badge">Admin Panel</span>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       PART 1: LOGIN FORM
+       Shown when user is NOT logged in.
+       Hidden once Firebase Auth succeeds.
+  ===================================================================== -->
+  <section class="login-section" id="loginSection">
+    <div class="login-box">
+      <h2>Admin Login</h2>
+      <p class="login-subtitle">Please sign in to access the applications dashboard.</p>
+
+      <!-- Login error message (shown on bad credentials, no alert used) -->
+      <div class="login-error" id="loginError" style="display:none;"></div>
+
+      <!-- Email field -->
+      <div class="form-group">
+        <label for="adminEmail">Email</label>
+        <input type="email" id="adminEmail" placeholder="admin@spicejunction.in" />
+      </div>
+
+      <!-- Password field -->
+      <div class="form-group">
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" placeholder="Enter your password" />
+      </div>
+
+      <!-- Login button -->
+      <button class="login-btn" id="loginBtn" onclick="handleLogin()">Login</button>
+
+      <!-- Test credentials-->
+      <!--
+        TEST CREDENTIALS (pre-created in Firebase Authentication):
+        Email:    admin@spicejunction.in
+        Password: Admin@1234
+      -->
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       PART 2: DASHBOARD
+       Hidden on load. Shown after successful login.
+  ===================================================================== -->
+  <section class="dashboard-section" id="dashboardSection" style="display:none;">
+
+    <div class="dashboard-header">
+      <div>
+        <h2>Applications Dashboard</h2>
+        <p id="welcomeMsg" class="welcome-msg"></p>
+      </div>
+      <!-- Logout button -->
+      <button class="logout-btn" onclick="handleLogout()">Logout</button>
+    </div>
+
+    <!-- Loading state — shown while Firestore is fetching -->
+    <div class="loading-msg" id="loadingMsg">Loading applications...</div>
+
+    <!-- Empty state — shown if no applications exist -->
+    <div class="empty-msg" id="emptyMsg" style="display:none;">
+      📭 No applications received yet.
+    </div>
+
+    <!-- Applications table — shown once data loads -->
+    <div class="table-wrapper" id="tableWrapper" style="display:none;">
+      <table class="applications-table" id="applicationsTable">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Position</th>
+            <th>Experience (yrs)</th>
+            <th>Why Hire?</th>
+            <th>Submitted At</th>
+          </tr>
+        </thead>
+        <tbody id="applicationsBody">
+          <!-- Rows inserted by admin.js -->
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- Firebase SDK (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+  <!-- Our admin JS -->
+  <script src="admin.js"></script>
+</body>
+</html>

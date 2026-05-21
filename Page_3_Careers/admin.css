@@ -1,0 +1,311 @@
+/* =================================== 
+   SPICE JUNCTION — ADMIN DASHBOARD STYLES 
+   =================================== */ 
+
+:root {
+  --primary: #b5446e;         /* deep rose pink */
+  --primary-dark: #8b2f52;    /* darker plum rose */
+  --accent: #8b5fbf;          /* soft purple */
+  --accent-light: #ede0f7;    /* light lavender */
+  --bg: #faf3ee;              /* warm beige */
+  --white: #ffffff;
+  --text: #2d1f2a;
+  --text-muted: #7a6070;
+  --border: #e0d0da;
+  --error-color: #d63a5e;
+  --shadow: 0 4px 18px rgba(139,47,82,0.12);
+  --radius: 10px;
+  --font-heading: 'Georgia', serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===== ADMIN HEADER ===== */
+.admin-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+  padding: 16px 28px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.admin-badge {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  letter-spacing: 0.5px;
+}
+
+/* ===== LOGIN SECTION ===== */
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 40px 20px;
+}
+
+.login-box {
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-box h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.login-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Login error message */
+.login-error {
+  background: #fce4ec;
+  color: var(--error-color);
+  border: 1px solid #f8bbd0;
+  border-radius: 7px;
+  padding: 11px 14px;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+/* ===== FORM GROUPS (used in login) ===== */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.form-group input {
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: #fdf8f5;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(139,95,191,0.15);
+  background: white;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+  width: 100%;
+  padding: 13px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: var(--accent);
+  transform: scale(1.01);
+}
+
+.login-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+/* ===== DASHBOARD SECTION ===== */
+.dashboard-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.welcome-msg {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===== LOADING / EMPTY STATES ===== */
+.loading-msg,
+.empty-msg {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.loading-msg::before {
+  content: "⏳ ";
+}
+
+/* ===== APPLICATIONS TABLE ===== */
+.table-wrapper {
+  overflow-x: auto;                   /* scroll horizontally on small screens */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  font-size: 0.88rem;
+}
+
+/* Table header */
+.applications-table thead tr {
+  background: linear-gradient(90deg, var(--primary-dark), var(--accent));
+  color: white;
+}
+
+.applications-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Table body rows */
+.applications-table tbody tr {
+  border-bottom: 1px solid #f0e0e8;
+  transition: background 0.15s;
+}
+
+.applications-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.applications-table tbody tr:hover {
+  background: var(--accent-light);
+}
+
+.applications-table td {
+  padding: 12px 16px;
+  vertical-align: top;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* Serial number column */
+.applications-table td:first-child {
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  width: 50px;
+}
+
+/* "Why hire?" cell — cap width and allow wrap */
+.applications-table td:nth-child(7) {
+  max-width: 240px;
+  word-wrap: break-word;
+}
+
+/* Alternate row tint */
+.applications-table tbody tr:nth-child(even) {
+  background: #fdf5f8;
+}
+
+.applications-table tbody tr:nth-child(even):hover {
+  background: var(--accent-light);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .login-box {
+    padding: 28px 20px;
+  }
+
+  .dashboard-section {
+    padding: 24px 14px 40px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+}

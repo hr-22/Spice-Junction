@@ -1,0 +1,262 @@
+/* ===================================
+   SPICE JUNCTION — CAREERS PAGE STYLES
+   =================================== */
+
+:root {
+  --primary: #b5446e;
+  --primary-dark: #8b2f52;
+  --accent: #8b5fbf;
+  --bg: #faf3ee;
+  --white: #ffffff;
+  --text: #2d1f2a;
+  --text-muted: #7a6070;
+  --error-color: #d63a5e;
+  --success-color: #27ae60;
+  --border: #ddd;
+  --shadow: 0 4px 18px rgba(139,47,82,0.10);
+  --radius: 10px;
+  --font-heading: 'Georgia', serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--primary-dark);
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
+  border-bottom-color: var(--accent);
+}
+
+/* ===== HERO SECTION ===== */
+.careers-hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.careers-hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.careers-hero p {
+  font-size: 1rem;
+  opacity: 0.88;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== FORM SECTION ===== */
+.form-section {
+  padding: 50px 20px;
+}
+
+.form-container {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f0e0d0;
+  padding-bottom: 12px;
+}
+
+/* ===== FORM GROUPS ===== */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+/* Red asterisk for required fields */
+.required {
+  color: var(--error-color);
+}
+
+/* Input, select, textarea base styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+  background: white;
+}
+
+/* Red border when field has validation error */
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: var(--error-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Inline error message below each field */
+.field-error {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  min-height: 16px; /* reserve space so layout doesn't jump */
+}
+
+/* ===== SUCCESS BANNER ===== */
+.success-banner {
+  background: #d4edda;
+  color: var(--success-color);
+  border: 1px solid #c3e6cb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ===== ERROR BANNER (Firebase failure) ===== */
+.error-banner {
+  background: #f8d7da;
+  color: var(--error-color);
+  border: 1px solid #f5c6cb;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.92rem;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submit-btn {
+  width: 100%;
+  padding: 13px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--accent);
+  transform: scale(1.01);
+}
+
+/* Disabled state while Firebase is writing */
+.submit-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--primary-dark);
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  padding: 22px 20px;
+  font-size: 0.88rem;
+  margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .careers-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .form-container {
+    padding: 24px 18px;
+  }
+
+  .navbar-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    margin-left: 12px;
+  }
+}

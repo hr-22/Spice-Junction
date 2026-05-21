@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spice Junction — Menu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">🍛 Spice Junction</div>
+      <p class="tagline">Where Every Bite Tells a Story</p>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Menu</a>
+        <a href="../Page_2_About/index.html">About</a>
+        <a href="../Page_3_Careers/careers.html">Careers</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CATEGORY FILTER BUTTONS ===== -->
+  <section class="filter-section">
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="All">All</button>
+      <button class="filter-btn" data-category="Starters">Starters</button>
+      <button class="filter-btn" data-category="Main Course">Main Course</button>
+      <button class="filter-btn" data-category="Biryani">Biryani</button>
+      <button class="filter-btn" data-category="Desserts">Desserts</button>
+      <button class="filter-btn" data-category="Beverages">Beverages</button>
+    </div>
+  </section>
+
+  <!-- ===== MENU CARDS GRID ===== -->
+  <main class="menu-section">
+    <div class="menu-grid" id="menuGrid"></div>
+  </main>
+
+  <!-- ===== STICKY CART BAR ===== -->
+  <div class="cart-bar" id="cartBar">
+    <div class="cart-summary" id="cartSummary" onclick="toggleCartDetails()">
+      <span>🛒 <strong id="cartCount">0</strong> items</span>
+      <span>Total: ₹<strong id="cartTotal">0</strong></span>
+      <span class="cart-toggle-hint">▲ View Cart</span>
+    </div>
+
+    <!-- Expanded cart details -->
+    <div class="cart-details" id="cartDetails">
+      <h3>Your Order</h3>
+      <ul id="cartItemList"></ul>
+      <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
